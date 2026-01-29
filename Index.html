@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script src="dist/js/bootstrap.js"></script>
+    <style>
+        .cardheight{
+            height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+
+    <!-- Section One starts here -->
+         <section class="row">
+            <div class="col-lg-12">
+                <!-- Below tag element will hold all the contents of the navbar -->
+                 <nav class="navbar navbar-expand-lg navbar-light bg-success">
+                    <a href="Index.html">
+                        <img src="images/nano-icon.png" alt="" height="70px">
+                    </a>
+                    <a href="index.html" class="navbar-brand"><b>NANOSPACE</b></a>
+
+                    <!-- Below is the toggler/hamburger button to either collapse/expand contents depending on the different screen sizes. -->
+                     <button class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+
+                     <div id="navbarcontents" class="navbar-collapse collapse">
+                        <div class="navbar-nav">
+                            <a href="index.html" class="nav-link active">Home</a>
+                            <a href="#" class="nav-link">Courses</a>
+                            <a href="#" class="nav-link">About Us</a>
+                        </div>
+                     </div>
+
+                     <div>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-dark" type="submit">Search</button>
+                        </form>
+                     </div>
+                 </nav>
+            </div>
+         </section>
+        <!-- Section One ends here -->
+
+        <!-- Section two starts here -->
+         <section class="row">
+            <div class="col-lg-12">
+                <!-- Below is the division that will hold all the contents of the carousel. -->
+                <div class="carousel slide" data-bs-ride="carousel" id="mycarousel" id="carouselIndicator">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+                    <!-- Below is the div that will hold all the images. -->
+                     <div class="carousel-inner">
+                        <!-- Below is the div with the 1st image -->
+                         <div class="carousel-item">
+                            <img src="images/nano2.avif" alt="slide one" class="d-block w-100" width="100%" height="450px">
+
+                            <div class="carousel-caption text-dark caption text-center">
+                                <h3>Nanotechnology explores the design and application of materials and systems at the nanoscale—where matter behaves in unique and powerful ways. By engineering structures atom by atom, nanotechnology enables breakthroughs in medicine, electronics, energy, and advanced materials, shaping smarter and more sustainable technologies for the future.</h3>
+                            </div>
+                         </div>
+                         <!-- Below is the div with the 2nd image -->
+                          <div class="carousel-item">
+                            <img src="images/nano10.avif" alt="slide two" class="d-block w-100" width="100%" height="450px">
+
+                            <div class="carousel-caption text-white caption text-center">
+                                <h3>It is the science of working at the smallest scale to create big impact. By manipulating materials at the level of atoms and molecules, we unlock new possibilities in healthcare, electronics, and materials science—driving innovation where precision matters most.</h3>
+                            </div>
+                          </div>
+                          <!-- Below is the div with the 3rd image -->
+                           <div class="carousel-item">
+                            <img src="images/nano11.webp" alt="slide three" class="d-block w-100" width="100%" height="450px">
+
+                            <div class="carousel-caption text-white caption text-center">
+                                <h3>It is about making big changes using very small tools. By working at the level of atoms, it opens the door to innovations in healthcare, technology, and sustainability.</h3> <br>
+                                <h1 class="bg-dark">Welcome To The Future.</h1>
+                            </div>
+                           </div>
+                           <!-- Below is the div with the fourth image -->
+                            <div class="carousel-item active">
+                                <img src="images/microscopic-7606442_1920.jpg" alt="slide four" class="d-block w-100" width="100%" height="450px">
+
+                            <div class="carousel-caption text-white caption text-center">
+                                <h3>Nanotechnology focuses on understanding and shaping the world at the smallest scale. By manipulating atoms and molecules, it helps develop better medicines, cleaner energy, and advanced technologies that impact how we live, work, and communicate.</h3>
+                            </div>
+                            </div>
+                     </div>
+
+                     <!-- Below are the controls  -->
+                      <a href="#mycarousel" class="carousel-control-prev" data-bs-slide="prev"><span class="carousel-control-prev-icon bg-danger"></span></a>
+                      <a href="#mycarousel" class="carousel-control-next" data-bs-slide="next"><span class="carousel-control-next-icon bg-danger"></span></a>
+                </div>
+            </div>
+         </section> <br> <hr style="color: rgb(255, 255, 255);">
+        <!-- Section two ends here -->
+
+        <!-- Section three starts here -->
+         <section class="row">
+            <div class="col-lg-8">
+                <h3 class="text-danger">What is Nanotech?</h3>
+                <p class="text-white"> It is the science of working with extremely small things—so small that you cannot see them, even with a regular microscope.</p>
+
+                <p class="text-white">It focuses on materials that are about 1 to 1000 nanometers in size (a nanometer is one-billionth of a meter). At this tiny scale, materials can behave differently, allowing scientists to create new and improved technologies.</p>
+
+                <h3 class="text-danger">Where is it used in our daily lives?</h3>
+                <ul class="text-white">
+                    <li>Medicine: targeted drug delivery and improved diagnostics</li>
+                    <li>Electronics: faster, smaller devices</li>
+                    <li>Materials: stronger, lighter, and more durable products</li>
+                    <li>Energy: better batteries and solar panels</li>
+
+                </ul>
+            </div>
+
+            <div class="col-lg-4">
+                <img src="images/omar-lopez-rincon-XkPNEqAhlaI-unsplash.jpg" alt="" height="300px" width="95%">
+            </div>
+         </section> <br> <hr style="color: rgb(255, 255, 255);">
+        <!-- Section three ends here -->
+
+        <!-- Section four starts here -->
+         <section class="row">
+            <h2 style="color: brown;" class="text-center">Relevant Fields applying Nanotechnology</h2>
+            <div class="col-lg-3 text-center">
+                <!-- Below is the div that contains the card contents -->
+                <div class="card shadow border-success m-2 bg-success cardheight">
+                    <!-- Below is the div that contains the header -->
+                    <div class="card-header text-dark"><h4>Medicine</h4></div>
+                    <div class="card-body">
+                        <img src="images/sci-fi-9823261_1920.png" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card-footer">
+                        <p>Nanotechnology is used in medicine to diagnose, treat, and prevent diseases more effectively—often with fewer side effects. Here are the main ways it is used, in plain language</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <!-- Below is the div that contains the card contents -->
+                <div class="card shadow border-success m-2 bg-success cardheight">
+                    <!-- Below is the div that contains the header -->
+                    <div class="card-header text-dark "><h4>Electrical Engineering</h4></div>
+                    <div class="card-body">
+                        <img src="images/logan-voss-MERDjcUqFI0-unsplash.jpg" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card-footer">
+                        <p>Nanotechnology in electrical engineering is used to make devices smaller, faster, more efficient, and more powerful by working at the scale of atoms and electrons such making advanced semiconductors.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <!-- Below is the div that contains the card contents -->
+                <div class="card shadow border-success m-2 bg-success cardheight">
+                    <!-- Below is the div that contains the header -->
+                    <div class="card-header text-dark "><h4>Material Science</h4></div>
+                    <div class="card-body">
+                        <img src="images/mt.jpg" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card-footer">
+                        <p>Nanotechnology in materials science is used to create materials that are stronger, lighter, smarter, and more durable by controlling their structure at the atomic and molecular level i.e. Making surface coatings and high density textile material.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <!-- Below is the div that contains the card contents -->
+                <div class="card shadow border-success m-2 bg-success cardheight">
+                    <!-- Below is the div that contains the header -->
+                    <div class="card-header text-dark "><h4>Energy</h4></div>
+                    <div class="card-body">
+                        <img src="images/nano3.avif" alt="" width="100%" height="100%">
+                    </div>
+                    <div class="card-footer">
+                        <p>Nanotechnology in energy is used to make energy systems more efficient, cleaner, and more sustainable by improving how energy is generated, stored, and used.</p>
+                    </div>
+                </div>
+            </div>
+         </section> <br> <hr style="color: rgb(255, 255, 255);">
+        <!-- Section four end here -->
+
+        <!-- Section five starts here -->
+         <section class="row">
+            <h2 class="text-danger text-center">Top Institutions offering Nanotechnology Engineering in Kenya.</h2>
+            <div class="col-lg-3 text-center">
+                <a href="https://www.uonbi.ac.ke/" id="anchor1">
+                    <img src="images/UoN Logo_0.jpg" alt="" height="200px" width="300px">
+                    <h4>University Of Nairobi</h4>
+                </a>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <a href="https://mu.ac.ke/" id="anchor1">
+                    <img src="images/MoiU.webp" alt="" height="200px" width="300px">
+                    <h4>Moi University</h4>
+                </a>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <a href="https://www.jkuat.ac.ke/" id="anchor1">
+                    <img src="images/JKUAT.webp" alt="" height="200px" width="300px">
+                    <h4>JKUAT</h4>
+                </a>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                <a href="https://www.ku.ac.ke/" id="anchor1">
+                    <img src="images/KenyattaU.webp" alt="" height="200px" width="300px">
+                    <h4>Kenyatta University</h4>
+                </a>
+            </div>
+         </section> <br> <hr style="color: azure;">
+        <!-- Section five ends here -->
+
+        <!-- Section six starts here -->
+         <section class="row">
+            <div class="col-lg-6 text-center">
+                <h4 class="text-danger">Why does it matter?</h4>
+                <p class="text-white">Nanotechnology matters because it helps solve real-world problems in smarter, more efficient ways.</p>
+                <p class="text-white">By working at an extremely small scale, scientists can create materials and technologies that are stronger, faster, cheaper, and more sustainable than what is possible with traditional methods.</p>
+
+                <ul class="text-white">
+                    <p>Here is why it is important:</p>
+                    <li>Better healthcare: Nanotechnology enables earlier disease detection, targeted treatments, and fewer side effects</li>
+                    <li>Cleaner energy: It improves solar panels, batteries, and fuel cells, helping reduce pollution and energy waste.</li>
+                    <li>Smaller, faster technology: It allows electronics to be more powerful while using less energy.</li>
+                    <li>Stronger materials: Nanomaterials make products lighter, more durable, and longer-lasting.</li>
+                    <li>Environmental protection: It helps clean water, reduce waste, and improve resource efficiency.</li>
+                </ul>
+                <p class="text-white">In short, nanotechnology matters because small-scale science leads to big improvements in everyday life and the future of technology.</p>
+
+                <h4 class="text-danger">Fun facts</h4>
+                <ul class="text-white">
+                    <li>A nanometer is so small that a human hair is about 100,000 nanometers wide.</li>
+                    <li>Nanotechnology works at a scale where gravity barely matters, but electrical forces dominate.</li>
+                    <li>Nanotechnology is already in everyday products like sunscreen, clothing, phones, and food packaging.</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <img src="images/nano9.avif" alt="">
+                <img src="images/nano6.avif" alt="">
+            </div>
+         </section> <br> <hr style="color: azure;">
+        <!-- Section six ends here -->
+
+        <!-- Section seven starts here -->
+         <section class="row">
+            <div class="col-lg-4 text-center text-white">
+                <h4 class="text-danger">Nanotechnology and Sustainability</h4>
+                <p>Nanotechnology plays an important role in building a more sustainable future. By improving how materials and systems work at the smallest scale, it helps reduce waste, save energy, and use resources more efficiently.</p>
+
+                <p>Nano-engineered materials can make solar panels and batteries more efficient, allowing cleaner energy to be produced and stored. In manufacturing, nanotechnology enables stronger and longer-lasting materials, which reduces the need for frequent replacement and lowers environmental impact.</p>
+
+                <p>Nanotechnology also supports clean water and pollution control. Nanofilters can remove harmful contaminants from water, while nanomaterials help capture pollutants and improve recycling processes.</p>
+
+                <p>Overall, nanotechnology contributes to sustainability by helping create technologies that are cleaner, smarter, and more environmentally friendly, supporting a healthier planet for future generations.</p>
+            </div>
+
+            <div class="col-lg-4">
+                <img src="images/nn3.jpg" alt="" height="250px" class="m-1">
+                <img src="images/nn5.jpg" alt="" height="250px" width="400px" class="m-1">
+            </div>
+
+            <div class="col-lg-4 text-white text-center">
+                <h4 class="text-danger">The Future of Nanotechnology</h4>
+                <p>The future of nanotechnology promises a world that feels like science fiction—where tiny innovations create huge changes in how we live, heal, and interact with technology. By controlling matter at the atomic and molecular level, scientists are unlocking possibilities that were unimaginable just a few decades ago.</p>
+
+                <p>In the coming years, nanotechnology is expected to revolutionize medicine through personalized treatments and early disease detection. In energy, it will help create more efficient solar cells, longer-lasting batteries, and cleaner energy systems. Electronics will continue to become smaller, faster, and more energy-efficient.</p>
+
+                <p>Nanotechnology will also drive innovation in sustainable materials, environmental protection, and advanced computing. By designing materials at the atomic level, researchers can develop solutions that were once impossible.</p>
+
+                <p style="color: crimson;">In essence, the future of nanotechnology is a world where atoms are building blocks for solutions, and the smallest structures unlock the largest possibilities. It is a future where innovation is limited only by imagination.</p>
+
+            </div>
+         </section> <br> <hr style="color: azure;">
+        <!-- Section seven ends here -->
+
+        <!-- Section eight starts here -->
+         <section class="row bg-success">
+            <div class="col-lg-4 p-4 text-white">
+                <h4 class="text-center text-dark">About Us</h4>
+
+                <p>Exploring the world at the nanoscale opens doors to amazing possibilities. Our goal is to make nanotechnology easy to understand and exciting for everyone, from students to science enthusiasts.</p>
+
+                <p>We’re dedicated to bringing the future of nanotechnology closer to today. From medicine to energy, electronics to materials, we showcase how tiny breakthroughs are shaping a smarter, cleaner, and more innovative world.</p>
+            </div>
+
+            <div class="col-lg-4 p-4">
+                <h4 class="text-center text-dark">Contact Us</h4>
+
+                <form>
+                    <input type="email" placeholder="Enter Email Address" class="form-control"> <br>
+
+                    <textarea cols="50" rows="5" class="form-control" placeholder="Leave a comment"></textarea> <br>
+
+                    <input type="submit" value="Send Message" class="btn btn-outline-dark"> 
+                </form>
+            </div>
+
+            <div class="col-lg-4 p-4">
+                <h4 class="text-dark text-center">Stay Connected</h4>
+
+                <a href="https://www/facebook.com">
+                    <img src="images/fb.png" alt="">
+                </a> &nbsp; &nbsp;
+                <a href="https://www/instagram.com">
+                    <img src="images/in.png" alt="">
+                </a> &nbsp; &nbsp;
+                <a href="https://www/twitter.com">
+                    <img src="images/x.png" alt="">
+                </a> &nbsp; &nbsp;
+
+                <p class="pt-3">Stay connected with us to explore the latest nanotechnology news, breakthroughs, and innovations. Follow, subscribe, or reach out to join the conversation!</p>
+
+                <p>Be part of the future at the nanoscale. Follow us for updates on science, technology, and discoveries shaping tomorrow.</p>
+            </div>
+         </section>
+         <footer class="text-center text-white bg-dark p-2">
+            <b>Developed by Matheka.J &copy; 2026 All Rights Reserved </b>
+         </footer>
+        <!-- Section eight ends here -->
+
+</body>
+</html>
