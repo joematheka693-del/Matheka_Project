@@ -1,236 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
-    <script src="dist/js/bootstrap.js"></script>
-    <style>
-        a{
-            text-decoration: none;
-            color: darkgreen;
-        }
-        a:hover{
-            color: cadetblue;
-            text-decoration: underline;
-        }
-        .card{
-            height: 355px;
-        }
-        #crd{
-            height: 250px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About NanoSphere</title>
+
+  <link rel="stylesheet" href="dist/css/bootstrap.css">
+  <script src="dist/js/bootstrap.bundle.js" defer></script>
+
+  <style>
+    body {
+      background: #07110d;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: rgba(5, 90, 55, 0.95);
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #9fffc7 !important;
+    }
+
+    .hero {
+      min-height: 460px;
+      background:
+        linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.82)),
+        url("images/abt.webp");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: bold;
+      color: #55ff9c;
+    }
+
+    .hero p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .section-title {
+      color: #55ff9c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .content-box,
+    .value-card,
+    .faq-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(85,255,156,0.22);
+      border-radius: 20px;
+      padding: 30px;
+      height: 100%;
+      box-shadow: 0 0 25px rgba(0,255,120,0.08);
+    }
+
+    .value-card {
+      transition: 0.3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 0 25px rgba(85,255,156,0.22);
+    }
+
+    .value-card h4 {
+      color: #55ff9c;
+      font-weight: bold;
+    }
+
+    .img-box {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.45);
+    }
+
+    .stat-box {
+      background: #10251b;
+      border: 1px solid rgba(85,255,156,0.25);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      height: 100%;
+    }
+
+    .stat-box h2 {
+      color: #55ff9c;
+      font-weight: bold;
+      font-size: 42px;
+    }
+
+    .timeline {
+      border-left: 3px solid #55ff9c;
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      background: #55ff9c;
+      border-radius: 50%;
+    }
+
+    .accordion-button {
+      background: #10251b;
+      color: white;
+      border: none;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: #0d7a47;
+      color: white;
+    }
+
+    .accordion-body {
+      background: #07110d;
+      color: white;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #063d28, #0d7a47);
+      border-radius: 24px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .footer-section {
+      background: #085c38;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .img-box {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-dark">
 
-    <!-- Section One starts here -->
-         <section class="row">
-            <div class="col-lg-12">
-                <!-- Below tag element will hold all the contents of the navbar -->
-                 <nav class="navbar navbar-expand-lg navbar-light bg-success">
-                    <a href="Index.html">
-                        <img src="images/nano-icon.png" alt="" height="70px">
-                    </a>
-                    <a href="index.html" class="navbar-brand"><b>NanoSphere</b></a>
+<body>
 
-                    <!-- Below is the toggler/hamburger button to either collapse/expand contents depending on the different screen sizes. -->
-                     <button class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
-                        <span class="navbar-toggler-icon"></span>
-                     </button>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top px-3">
+    <div class="container-fluid">
 
-                     <div id="navbarcontents" class="navbar-collapse collapse">
-                        <div class="navbar-nav">
-                            <a href="index.html" class="nav-link">Home</a> &nbsp;
-                            <a href="Courses.html" class="nav-link">Courses</a> &nbsp;
-                            <a href="Articles.html" class="nav-link">Articles</a> &nbsp;
-                            <a href="AboutUs.html" class="nav-link active">About Us</a> &nbsp;
-                            
-                        </div>
-                     </div>
+      <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+        <img src="images/nano-icon.png" height="55" alt="NanoSphere Logo">
+        NanoSphere
+      </a>
 
-                     <div>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-dark" type="submit">Search</button>
-                        </form>
-                     </div>
-                 </nav>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navbarcontents" class="collapse navbar-collapse">
+        <div class="navbar-nav mx-auto">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="Courses.html" class="nav-link">Courses</a>
+          <a href="Articles.html" class="nav-link">Articles</a>
+          <a href="AboutUs.html" class="nav-link active">About Us</a>
+        </div>
+
+        <form class="d-flex mt-3 mt-lg-0">
+          <input class="form-control me-2" type="search" placeholder="Search NanoSphere...">
+          <button class="btn btn-outline-light">Search</button>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>About NanoSphere</h1>
+      <p>
+        A learning and discovery platform making nanotechnology simple, exciting, and useful for students, innovators, and future scientists.
+      </p>
+
+      <div class="mt-4">
+        <a href="Courses.html" class="btn btn-success me-2">Explore Courses</a>
+        <a href="Articles.html" class="btn btn-outline-light">Read Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT INTRO -->
+  <section class="container py-5">
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-7">
+        <div class="content-box">
+          <h2 class="section-title">Who We Are</h2>
+
+          <p>
+            NanoSphere is a learning platform dedicated to the world of nanotechnology — the science of working with matter at the smallest scale to create some of the biggest innovations.
+          </p>
+
+          <p>
+            We break down complex nanoscale science into clear explanations, structured lessons, articles, and real-world examples that anyone can follow.
+          </p>
+
+          <p class="text-success fw-bold">
+            Our goal is simple: make the future of science easier to understand.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <img src="images/abt.webp" class="img-box" alt="About NanoSphere">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="container py-4">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="stat-box">
+          <h2>6+</h2>
+          <p>Structured Learning Areas</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-box">
+          <h2>4</h2>
+          <p>Main Nanotech Fields</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="stat-box">
+          <h2>100%</h2>
+          <p>Beginner-Friendly Learning</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="container py-5">
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-6">
+        <div class="content-box">
+          <h2 class="section-title">Our Mission</h2>
+
+          <p>
+            Our mission is to make nanotechnology simple, exciting, and accessible to everyone.
+          </p>
+
+          <ul>
+            <li>Beginner-friendly nanotechnology education</li>
+            <li>Clear articles that explain difficult concepts</li>
+            <li>Courses that guide learners step-by-step</li>
+            <li>Updates on discoveries and breakthroughs</li>
+            <li>Inspiration for future engineers and scientists</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="images/abt3.webp" class="img-box" alt="NanoSphere mission">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT YOU FIND -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">What You’ll Find Here</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="value-card">
+          <h4>📚 Articles</h4>
+          <p>Simple explanations of nanotechnology, nanomaterials, and real-world discoveries.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="value-card">
+          <h4>🎓 Courses</h4>
+          <p>Step-by-step learning paths from beginner to advanced nanotechnology topics.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="value-card">
+          <h4>🧪 Nanomaterials</h4>
+          <p>Guides on graphene, carbon nanotubes, quantum dots, nanoparticles, and coatings.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="value-card">
+          <h4>⚡ Applications</h4>
+          <p>Explore nanotech in medicine, electronics, energy, materials, and environment.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="value-card">
+          <h4>🔬 Research Skills</h4>
+          <p>Learn how to understand scientific papers, lab tools, and project ideas.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="value-card">
+          <h4>🚀 Innovation</h4>
+          <p>Discover how tiny nanoscale breakthroughs can create massive global impact.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="container py-5">
+    <div class="row g-4 align-items-center">
+
+      <div class="col-lg-5">
+        <img src="images/abt2.webp" class="img-box" alt="NanoSphere values">
+      </div>
+
+      <div class="col-lg-7">
+        <div class="content-box">
+          <h2 class="section-title">Our Values</h2>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <h5 class="text-success">Curiosity</h5>
+              <p>Asking questions and exploring the unknown.</p>
             </div>
-         </section> <br>
-        <!-- Section One ends here -->
 
-        <!-- Section two starts here -->
-         <section class="row text-white">
-            <h1 class="text-secondary text-center p-5" style="background-color: darkblue; text-decoration: underline;">ABOUT NANOSPHERE</h1>
-            <div class="col-lg-8">
-                <img src="images/abt.webp" alt="" width="100%">
+            <div class="col-md-6">
+              <h5 class="text-success">Innovation</h5>
+              <p>Learning how science becomes real technology.</p>
             </div>
 
-            <div class="col-lg-4 text-center">
-                <p>Welcome to NanoSphere, a learning and discovery platform dedicated to the world of nanotechnology — the science of working with matter at the smallest scale to create some of the biggest innovations. At the nanoscale, materials behave in extraordinary ways, unlocking possibilities that can transform medicine, electronics, energy, and environmental solutions.</p>
-
-                <p>NanoSphere was created with one goal: to make nanotechnology easy to understand and exciting to explore. Nanotech can feel complex because it combines physics, chemistry, biology, and engineering — but here, we break it down into clear explanations, structured lessons, and real-world examples that anyone can follow.</p>
-            </div>
-         </section> <br> <hr style="color: azure;">
-        <!-- Section two ends here -->
-
-        <!-- Section three starts here -->
-         <section class="row">
-            <div class="col-lg-6 text-center text-white">
-                <h3 class="text-danger">OUR MISSION.</h3>
-                <p>Our mission is to make nanotechnology simple, exciting, and accessible to everyone. We aim to break down complex nanoscale science into clear articles, structured courses, and real-world examples that help learners understand how nanotechnology works and why it matters. By sharing knowledge, discoveries, and innovations, we want to inspire curiosity, support future engineers and scientists, and build a community of people who are passionate about the technologies shaping tomorrow.</p>
-
-                <p>Our mission is to inspire curious minds and future innovators by providing:</p>
-
-                <ul style="text-align: left;">
-                    <li>Beginner-friendly nanotechnology education</li>
-                    <li>High-quality articles that explain concepts clearly</li>
-                    <li>Courses that guide learners step-by-step</li>
-                    <li>Updates on discoveries and breakthroughs shaping the future</li>
-                </ul>
+            <div class="col-md-6">
+              <h5 class="text-success">Clarity</h5>
+              <p>Making complex ideas simple and understandable.</p>
             </div>
 
-            <div class="col-lg-6">
-                <img src="images/abt3.webp" alt="" width="100%">
+            <div class="col-md-6">
+              <h5 class="text-success">Responsibility</h5>
+              <p>Promoting safe and ethical scientific progress.</p>
             </div>
-         </section> <br> <hr style="color: azure;">
-        <!-- Section three ends here -->
+          </div>
+        </div>
+      </div>
 
-        <!-- Section four starts here -->
-         <section class="row">
-            <div class="col-lg-4 text-white">
-                <h4 class="text-primary">What you'll find here</h4>
-                <p>At NanoSphere, you can explore:</p>
-                <ul>
-                    <li>Articles that explain nanotechnology in simple language</li>
-                    <li>Courses designed for beginners to advanced learners</li>
-                    <li>Nanomaterials guides (graphene, carbon nanotubes, quantum dots, and more)</li>
-                    <li>Applications of nanotech in medicine, electronics, energy, and the environment</li>
-                    <li>Research skills and project ideas for learners who want to go deeper</li>
-                </ul>
-            </div>
+    </div>
+  </section>
 
-            <div class="col-lg-4">
-                <img src="images/abt2.webp" alt="" width="100%">
-            </div>
+  <!-- WHY DIFFERENT -->
+  <section class="container py-5">
+    <div class="row g-4">
 
-            <div class="col-lg-4 text-center text-white">
-                <h4 class="text-primary">Our Values</h4>
-                <p>We believe in:</p>
-                <ul style="text-align: left;">
-                    <li>Curiosity — asking questions and exploring the unknown</li>
-                    <li>Innovation — learning how science becomes real technology</li>
-                    <li>Clarity — making complex ideas simple and understandable</li>
-                    <li>Responsibility — promoting safe and ethical scientific progress</li>
-                </ul>
-            </div>
-         </section> <br> <hr style="color: azure;">
-        <!-- Section four ends here -->
+      <div class="col-lg-6">
+        <div class="content-box">
+          <h2 class="section-title">What Makes Us Different?</h2>
 
-        <!-- Section five starts here -->
-         <section class="row">
-            <div class="col-lg-6 text-white text-center">
-                <h4 class="text-danger">Join the journey</h4>
-                <p>Nanotechnology is evolving every day, and new breakthroughs are constantly reshaping what is possible in medicine, electronics, energy, and advanced materials. At NanoSphere, we are committed to exploring these discoveries and making them easy to understand for everyone. Whether you are a student, a future engineer, a researcher, or simply curious about the future, you are welcome here. Join our journey as we learn, explore, and uncover the nanoscale world — because the future is being built one nanometer at a time.</p>
+          <p>
+            Nanotechnology is often explained in a way that feels too complex. NanoSphere focuses on clarity, structure, and real-world relevance.
+          </p>
 
-                <h4 class="text-danger">Disclaimer</h4>
-                <p>The information provided on NanoSphere is for educational and informational purposes only. While we strive to ensure that all content is accurate, reliable, and up to date, nanotechnology is a rapidly evolving field and some information may change as new research emerges. NanoSphere does not provide professional medical, legal, financial, or engineering advice. Any actions you take based on the information found on this website are strictly at your own risk. We encourage readers to consult qualified professionals and trusted scientific sources before making decisions related to health, safety, experiments, or technology development. By using this website, you agree that NanoSphere and its creators are not responsible for any losses, damages, or outcomes resulting from the use of our content.</p>
-            </div>
+          <p>
+            We help learners understand, not just memorize. Every article and course is written in a simple, engaging way with practical examples and a clear roadmap.
+          </p>
+        </div>
+      </div>
 
-            <div class="col-lg-6 text-white">
-                <h4 class="text-danger">What makes this website different</h4>
-                <p>Nanotechnology is often explained in a way that feels too complex or too academic. At NanoSphere, we do the opposite. We focus on clarity, structure, and real-world relevance. Our content is designed to help learners truly understand nanotechnology — not just memorize terms. Every article and course is written in a simple, engaging way, with practical examples and a clear learning roadmap. We don’t just talk about the future — we explain the science behind it, step-by-step, so anyone can follow along and grow from beginner to advanced.</p>
+      <div class="col-lg-6">
+        <div class="content-box">
+          <h2 class="section-title">Why Trust Us?</h2>
 
-                <h4 class="text-danger">Why trust us</h4>
-                <p>At NanoSphere, we value accuracy, clarity, and responsible science. Our content is carefully researched and written to make nanotechnology easy to understand without losing the real scientific meaning. We focus on verified concepts, trusted sources, and real-world applications, ensuring that readers learn information they can rely on. We also aim to be transparent: when a topic is still developing or uncertain, we clearly state it. Our goal is not to exaggerate or mislead, but to educate, inspire curiosity, and help learners build a strong foundation in nanotechnology.</p>
-            </div>
-         </section> <br> <hr style="color: azure;">
-        <!-- Section five ends here -->
+          <p>
+            We value accuracy, clarity, and responsible science. Our content focuses on verified concepts, trusted sources, and real-world applications.
+          </p>
 
-        <!-- Section six starts here -->
-         <section class="row">
-         <h3 class="text-center text-success">Frequently Asked Questions (FAQ)</h3>
-         <div class="col-lg-4">
-            <div class="card shadow border-success p-2 text-center text-dark bg-secondary">
-                <div class="card-header">
-                    <h4>1: What is nanotechnology?</h4>
-                    <div class="card-body">
-                        <p>Nanotechnology is the science and engineering of working with materials at an extremely small scale, usually between 1 and 100 nanometers. At this size, materials can behave differently, allowing scientists to create new technologies with improved strength, conductivity, efficiency, and special properties.</p>
-                    </div>
-                </div>
-            </div>
-         </div>
+          <p>
+            When a topic is still developing, we aim to explain it honestly instead of exaggerating or misleading readers.
+          </p>
+        </div>
+      </div>
 
-         <div class="col-lg-4">
-            <div class="card shadow border-success p-2 text-center text-dark bg-secondary">
-                <div class="card-header">
-                    <h4>2: Why is nanotechnology important?</h4>
-                    <div class="card-body">
-                        <p>Nanotechnology is important because it helps solve real-world problems using advanced materials and tiny-scale engineering. It is already being used in:</p>
-                        <ul>
-                            <li>Medicine (drug delivery, disease detection)</li>
-                            <li>Electronics (smaller and faster chips)</li>
-                            <li>Energy (better batteries, solar tech)</li>
-                            <li>Environment (water filtration and purification)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-         </div>
+    </div>
+  </section>
 
-         <div class="col-lg-4">
-            <img src="images/abt7.webp" alt="" width="100%" height="355px">
-         </div>
-         </section> <br> <hr style="color: azure;">
-        <!-- Section six ends here -->
+  <!-- LEARNING JOURNEY -->
+  <section class="container py-5">
+    <div class="content-box">
+      <h2 class="section-title text-center">Your Learning Journey</h2>
 
-        <!-- Section seven starts here -->
-         <section class="row bg-success">
-            <div class="col-lg-4 p-4 text-white">
-                <h4 class="text-center text-dark">About Us</h4>
+      <div class="timeline mt-4">
 
-                <p>Exploring the world at the nanoscale opens doors to amazing possibilities. Our goal is to make nanotechnology easy to understand and exciting for everyone, from students to science enthusiasts.</p>
+        <div class="timeline-item">
+          <h5 class="text-success">Step 1: Learn the Basics</h5>
+          <p>Understand what nanotechnology is and why nanoscale materials behave differently.</p>
+        </div>
 
-                <p>We are dedicated to bringing the future of nanotechnology closer to today. From medicine to energy, electronics to materials, we showcase how tiny breakthroughs are shaping a smarter, cleaner, and more innovative world.</p>
-            </div>
+        <div class="timeline-item">
+          <h5 class="text-success">Step 2: Explore Nanomaterials</h5>
+          <p>Learn about graphene, carbon nanotubes, nanoparticles, quantum dots, and nanocoatings.</p>
+        </div>
 
-            <div class="col-lg-4 p-4">
-                <h4 class="text-dark text-center">Do not miss any new discoveries</h4>
+        <div class="timeline-item">
+          <h5 class="text-success">Step 3: Discover Applications</h5>
+          <p>See how nanotech is used in medicine, electronics, energy, environment, and materials science.</p>
+        </div>
 
-                <a href="https://www/facebook.com">
-                    <img src="images/fb.png" alt="">
-                </a> &nbsp; &nbsp;
-                <a href="https://www/instagram.com">
-                    <img src="images/in.png" alt="">
-                </a> &nbsp; &nbsp;
-                <a href="https://www/twitter.com">
-                    <img src="images/x.png" alt="">
-                </a> &nbsp; &nbsp;
+        <div class="timeline-item">
+          <h5 class="text-success">Step 4: Build Research Skills</h5>
+          <p>Learn how to read scientific articles, think critically, and create project ideas.</p>
+        </div>
 
-                <p class="pt-3">Stay connected with us to explore the latest nanotechnology news, breakthroughs, and innovations. Follow, subscribe, or reach out to join the conversation!</p>
+      </div>
+    </div>
+  </section>
 
-                <p>Be part of the future at the nanoscale. Follow us for updates on science, technology, and discoveries shaping tomorrow.</p>
-            </div>
+  <!-- FAQ -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">Frequently Asked Questions</h2>
 
-            <div class="col-lg-4 p-4">
-                <div class="card shadow bg-dark" id="crd">
-                    <div class="card-header">
-                        <h5 class="text-danger">Sign In</h5>
-                        <div class="card-body">
-                            <input type="email" placeholder="Enter Email Address"> <br> <br>
+    <div class="accordion" id="faqAccordion">
 
-                            <input type="password" placeholder="Enter password"> <br> <br>
+      <div class="accordion-item bg-dark border-success">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+            What is nanotechnology?
+          </button>
+        </h2>
+        <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Nanotechnology is the science and engineering of working with materials at an extremely small scale, usually between 1 and 100 nanometers.
+          </div>
+        </div>
+      </div>
 
-                            <input type="button" value="Sign In" class="btn btn-outline-danger">
+      <div class="accordion-item bg-dark border-success">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+            Why is nanotechnology important?
+          </button>
+        </h2>
+        <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            It helps solve real-world problems in medicine, electronics, energy, materials, and environmental protection.
+          </div>
+        </div>
+      </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </section>
-         <footer class="text-center text-white bg-dark p-2">
-            <b>Developed by Matheka.J &copy; 2026 All Rights Reserved </b>
-         </footer>
-        <!-- Section seven ends here -->
+      <div class="accordion-item bg-dark border-success">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faqThree">
+            Is NanoSphere beginner-friendly?
+          </button>
+        </h2>
+        <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes. NanoSphere explains nanotechnology using simple language, examples, learning roadmaps, and structured lessons.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="container py-5">
+    <div class="content-box">
+      <h2 class="section-title">Disclaimer</h2>
+
+      <p>
+        The information provided on NanoSphere is for educational and informational purposes only. Nanotechnology is a rapidly evolving field, so some information may change as new research emerges.
+      </p>
+
+      <p>
+        NanoSphere does not provide professional medical, legal, financial, or engineering advice. Readers should consult qualified professionals and trusted scientific sources before making decisions related to health, safety, experiments, or technology development.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container py-5">
+    <div class="cta">
+      <h1 class="fw-bold">Join the NanoSphere Journey</h1>
+
+      <p>
+        Whether you are a student, future engineer, researcher, or science enthusiast, you are welcome here.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <a href="Courses.html" class="btn btn-light">Start Learning</a>
+        <a href="Articles.html" class="btn btn-outline-light">Explore Articles</a>
+        <a href="index.html" class="btn btn-outline-warning">Back Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer-section py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <h4>About Us</h4>
+          <p>
+            NanoSphere makes nanotechnology easy to understand and exciting for everyone, from students to science enthusiasts.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <h4>Stay Connected</h4>
+          <p>
+            Follow us for updates on science, technology, and discoveries shaping tomorrow.
+          </p>
+
+          <a href="https://www.facebook.com">
+            <img src="images/fb.png" alt="Facebook">
+          </a>
+
+          <a href="https://www.instagram.com">
+            <img src="images/in.png" alt="Instagram">
+          </a>
+
+          <a href="https://www.twitter.com">
+            <img src="images/x.png" alt="Twitter">
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card bg-dark text-white shadow p-3">
+            <h4 class="text-success">Sign In</h4>
+            <input type="email" placeholder="Enter Email Address" class="mb-3">
+            <input type="password" placeholder="Enter Password" class="mb-3">
+            <button class="btn btn-success">Sign In</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center bg-dark text-white p-3">
+    <b>Developed by Matheka.J &copy; 2026 All Rights Reserved</b>
+  </footer>
+
+</body>
+</html>

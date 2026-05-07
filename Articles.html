@@ -1,235 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
-    <script src="dist/js/bootstrap.js"></script>
-    <style>
-        a{
-            color:cadetblue;
-            text-decoration: none;
-        }
-        a:hover{
-            color: darkgreen;
-            text-decoration: underline;
-        }
-        .cardborder{
-            height: 550px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NanoSphere Articles</title>
+
+  <link rel="stylesheet" href="dist/css/bootstrap.css">
+  <script src="dist/js/bootstrap.bundle.js" defer></script>
+
+  <style>
+    body {
+      background: #06100c;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: rgba(5, 90, 55, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #8dffbd !important;
+    }
+
+    .hero {
+      min-height: 520px;
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
+        url("images/art7.webp");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      font-weight: 800;
+      color: #55ff9c;
+    }
+
+    .hero p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 18px;
+      color: #e8fff1;
+    }
+
+    .section-title {
+      color: #55ff9c;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .glass-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(85,255,156,0.22);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 0 30px rgba(0,255,120,0.08);
+    }
+
+    .article-card {
+      background: #10251b;
+      border: 1px solid rgba(85,255,156,0.25);
+      border-radius: 22px;
+      overflow: hidden;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 28px rgba(85,255,156,0.25);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .article-body {
+      padding: 25px;
+    }
+
+    .article-body h4 {
+      color: #55ff9c;
+      font-weight: bold;
+    }
+
+    .meta {
+      color: #9fffc7;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(85,255,156,0.12);
+      border: 1px solid rgba(85,255,156,0.35);
+      color: #8dffbd;
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .category-card {
+      background: #10251b;
+      border: 1px solid rgba(85,255,156,0.2);
+      border-radius: 18px;
+      padding: 25px;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 22px rgba(85,255,156,0.2);
+    }
+
+    .category-card h4 {
+      color: #55ff9c;
+      font-weight: bold;
+    }
+
+    .resource-card {
+      background: #10251b;
+      border-radius: 20px;
+      padding: 22px;
+      height: 100%;
+      text-align: center;
+      border: 1px solid rgba(85,255,156,0.22);
+      transition: 0.3s;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 22px rgba(85,255,156,0.2);
+    }
+
+    .resource-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      background: white;
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .resource-card a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .resource-card a:hover {
+      color: #55ff9c;
+    }
+
+    .newsletter {
+      background: linear-gradient(135deg, #063d28, #0d7a47);
+      border-radius: 26px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .newsletter input,
+    .signin-card input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    textarea {
+      background: #10251b;
+      color: white;
+      border: 1px solid rgba(85,255,156,0.25);
+    }
+
+    .footer-section {
+      background: #085c38;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .article-card img {
+        height: 220px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-dark text-white">
 
-    <!-- Section one starts here -->
-     <section class="row">
-            <div class="col-lg-12">
-                <!-- Below tag element will hold all the contents of the navbar -->
-                 <nav class="navbar navbar-expand-lg navbar-light bg-success">
-                    <a href="Index.html">
-                        <img src="images/nano-icon.png" alt="" height="70px">
-                    </a>
-                    <a href="index.html" class="navbar-brand"><b>NanoSphere</b></a>
+<body>
 
-                    <!-- Below is the toggler/hamburger button to either collapse/expand contents depending on the different screen sizes. -->
-                     <button class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
-                        <span class="navbar-toggler-icon"></span>
-                     </button>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top px-3">
+    <div class="container-fluid">
 
-                     <div id="navbarcontents" class="navbar-collapse collapse">
-                        <div class="navbar-nav">
-                            <a href="index.html" class="nav-link">Home</a> &nbsp;
-                            <a href="Courses.html" class="nav-link">Courses</a> &nbsp;
-                            <a href="Articles.html" class="nav-link active">Articles</a> &nbsp;
-                            <a href="AboutUs.html" class="nav-link">About Us</a> &nbsp;
-                            
-                        </div>
-                     </div>
+      <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+        <img src="images/nano-icon.png" height="55" alt="NanoSphere Logo">
+        NanoSphere
+      </a>
 
-                     <div>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-dark" type="submit">Search</button>
-                        </form>
-                     </div>
-                 </nav>
-            </div>
-         </section> <br>
-    <!-- Section one ends here -->
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Section two starts here -->
-     <section class="row">
-        <h2 class="bg-secondary text-light">Major Articles on the vast field of Nanotechnology.</h2>
+      <div id="navbarcontents" class="collapse navbar-collapse">
+        <div class="navbar-nav mx-auto">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="Courses.html" class="nav-link">Courses</a>
+          <a href="Articles.html" class="nav-link active">Articles</a>
+          <a href="AboutUs.html" class="nav-link">About Us</a>
+        </div>
+
+        <form class="d-flex mt-3 mt-lg-0">
+          <input class="form-control me-2" type="search" placeholder="Search articles...">
+          <button class="btn btn-outline-light">Search</button>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="tag">NanoSphere Knowledge Hub</span>
+      <h1>Nanotechnology Articles</h1>
+      <p>
+        Discover powerful articles, research insights, and beginner-friendly explanations about nanotechnology, nanomaterials, medicine, energy, electronics, and the future of science.
+      </p>
+
+      <div class="mt-4">
+        <a href="#featured" class="btn btn-success me-2">Read Featured Article</a>
+        <a href="#resources" class="btn btn-outline-light">Explore Resources</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="container py-5">
+    <div class="glass-box text-center">
+      <h2 class="section-title">Explore the Science Building Tomorrow</h2>
+      <p>
+        Nanotechnology focuses on designing and controlling materials at an extremely small scale. At this size, matter behaves differently, allowing scientists to build stronger materials, smarter devices, better medical tools, cleaner energy systems, and advanced environmental solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ARTICLE CATEGORIES -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">Article Categories</h2>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card">
+          <h4>🧪 Nanomaterials</h4>
+          <p>Graphene, carbon nanotubes, nanoparticles, quantum dots, and advanced coatings.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card">
+          <h4>🩺 Medicine</h4>
+          <p>Drug delivery, cancer therapy, biosensors, diagnostics, and nano-medicine.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card">
+          <h4>⚡ Energy</h4>
+          <p>Solar cells, batteries, supercapacitors, clean water, and environmental solutions.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card">
+          <h4>💻 Electronics</h4>
+          <p>Nanochips, quantum dots, smart sensors, flexible devices, and future computing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLE -->
+  <section class="container py-5" id="featured">
+    <h2 class="text-center section-title">Featured Article</h2>
+
+    <div class="row g-4 align-items-center article-card">
+      <div class="col-lg-6 p-0">
+        <img src="images/art1.webp" alt="Environmental nanotechnology">
+      </div>
+
+      <div class="col-lg-6">
+        <div class="article-body">
+          <span class="tag">Environmental Nanotechnology</span>
+          <div class="meta">By Frances Briggs • 26 Jan 2026</div>
+
+          <h4>The Potential and Limits of Nanotechnology in Environmental Remediation</h4>
+
+          <p>
+            Learn how nano-biochar, TiO2, iron oxide, and other nanomaterials are being used to fight pollution, improve water treatment, and support cleaner environments.
+          </p>
+
+          <p>
+            This article also explores the risks and limitations of using nanotechnology in environmental cleanup.
+          </p>
+
+          <a href="https://www.azonano.com/article.aspx?ArticleID=6988" class="btn btn-success">
+            Read Full Article
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">Latest Articles</h2>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <div class="article-card">
+          <img src="images/art2.webp" alt="Nanomaterial synthesis">
+
+          <div class="article-body">
+            <span class="tag">Nanomaterials</span>
+            <div class="meta">By Mohsin Abbas • 13 Jan 2026</div>
+
+            <h4>High-Throughput Approaches for Nanomaterials</h4>
+
+            <p>
+              Explore how high-throughput synthesis and characterization help scientists create, test, and optimize nanomaterials faster.
+            </p>
+
+            <a href="https://www.azonano.com/article.aspx?ArticleID=6984" class="btn btn-outline-success">
+              Read Article
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="article-card">
+          <img src="images/art3.webp" alt="One dimensional nanomaterials">
+
+          <div class="article-body">
+            <span class="tag">Nano Structures</span>
+            <div class="meta">By Ibtisam Abbasi • 20 Jan 2026</div>
+
+            <h4>What Are One-Dimensional Nanomaterials?</h4>
+
+            <p>
+              Understand one-dimensional nanomaterials and how their unique structures make them useful in research, electronics, and materials science.
+            </p>
+
+            <a href="https://www.azonano.com/article.aspx?ArticleID=6984" class="btn btn-outline-success">
+              Read Article
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDITOR'S PICKS -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">Editor’s Picks</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-box h-100">
+          <h4 class="text-success">Best for Beginners</h4>
+          <p>Start with articles explaining what nanotechnology is, how small a nanometer is, and why materials behave differently at the nanoscale.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-box h-100">
+          <h4 class="text-success">Most Practical</h4>
+          <p>Explore nanotechnology in medicine, electronics, energy storage, clean water, and materials used in daily life.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-box h-100">
+          <h4 class="text-success">Future Focus</h4>
+          <p>Read about advanced materials, smart devices, sustainable technologies, and scientific breakthroughs shaping tomorrow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="container py-5" id="resources">
+    <h2 class="text-center section-title">Trusted Nanotechnology Resources</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3">
+        <div class="resource-card">
+          <a href="https://www.ncbi.nlm.nih.gov/">
+            <img src="images/NIH.svg" alt="National Library of Medicine">
+            <h4 class="mt-3">National Library of Medicine</h4>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="resource-card">
+          <a href="https://www.azonano.com/articles.aspx">
+            <img src="images/Azonano.webp" alt="AZoNano">
+            <h4 class="mt-3">AZoNano</h4>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="resource-card">
+          <a href="https://www.sciencedaily.com/news/matter_energy/nanotechnology/">
+            <img src="images/Science Daily.png" alt="ScienceDaily">
+            <h4 class="mt-3">ScienceDaily</h4>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="resource-card">
+          <a href="https://scitechdaily.com/tag/nanotechnology/">
+            <img src="images/scitechdaily-logo-flat-80.webp" alt="SciTechDaily">
+            <h4 class="mt-3">SciTechDaily</h4>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="glass-box">
+          <h3 class="section-title">Share Your Thoughts</h3>
+          <p>What nanotechnology topic should NanoSphere explain next?</p>
+
+          <textarea rows="6" placeholder="Write your thoughts here..."></textarea>
+
+          <button class="btn btn-success mt-3 w-100">Submit Comment</button>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="glass-box">
+          <h3 class="section-title">Why Keep Reading?</h3>
+
+          <ul>
+            <li>Nanotechnology is already changing medicine, energy, electronics, and materials.</li>
+            <li>Every nanoscale discovery can lead to real-world innovation.</li>
+            <li>Understanding nanotech now prepares you for future careers and technologies.</li>
+            <li>NanoSphere makes complex science easier to understand.</li>
+          </ul>
+
+          <a href="Courses.html" class="btn btn-outline-success mt-3">
+            Continue Learning With Courses
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="container py-5">
+    <div class="newsletter">
+      <h1 class="fw-bold">Never Miss a Discovery</h1>
+      <p>
+        Subscribe for updates on nanotechnology articles, breakthroughs, learning guides, and future course releases.
+      </p>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-7">
+          <input type="email" placeholder="Enter your email address">
+        </div>
+
+        <div class="col-md-3 mt-3 mt-md-0">
+          <button class="btn btn-light w-100">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer-section py-5">
+    <div class="container">
+      <div class="row g-4">
+
         <div class="col-lg-4">
-            <p>Welcome to the Nanotechnology Articles hub. Here you will find beginner-friendly explanations, deep dives into nanomaterials, and real-world applications of nanotech in medicine, electronics, energy, and more. New articles are added regularly</p>
-
-            <p>Nanotechnology is a rapidly growing field that focuses on designing and controlling materials at an extremely small scale, usually between 1 and 100 nanometers. At this size, matter behaves differently, allowing scientists to create materials that are stronger, lighter, and more efficient than normal ones. These unique properties are driving innovations in medicine, electronics, energy, and environmental protection. From targeted drug delivery and disease detection to faster computer chips and improved batteries, nanotechnology is transforming the way we solve real-world problems. As research advances, new discoveries continue to emerge, making nanotechnology one of the most exciting technologies shaping the future.</p>
-        </div>
-        <div class="col-lg-8">
-            <div class="card shadow border-success m-2 text-dark bg-secondary cardborder text-center">
-                <div class="card-header">
-                    <h3>Article1: <i>By Frances Briggs</i>&nbsp; &nbsp; &nbsp; 26 Jan 2026</h3>
-                    
-                    <div class="card-body">
-                        <a href="https://www.azonano.com/article.aspx?ArticleID=6988">
-                        <img src="images/art1.webp" alt="" width="400px">
-                        <img src="images/art7.webp" alt="" width="320px">
-                        <h4 class="text-left">The Potential (and Limits) of Nanotechnology in Environmental Remediation</h4>
-                        <p>From sustainably synthesized iron oxide for wastewater treatment to nano-enhanced phytoremediation, nanotech is emerging as a powerful tool for tackling complex pollution. In this overview, we explore how materials like nano-biochar, TiO2, and nZVI are improving remediation, and where the risks still lie.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </section> <br>
-    <!-- Section two starts here -->
-
-    <!-- Section three starts here -->
-     <section class="row">
-        <div class="col-lg-6">
-            <div class="card shadow bg-secondary border-success text-dark m-2 text-center cardborder">
-                <div class="card-header">
-
-                    <h3>Article2: <i>By Mohsin Abbas</i>&nbsp; &nbsp; &nbsp; 13 Jan 2026</h3>
-                    
-                    <div class="card-body">
-                        <a href="https://www.azonano.com/article.aspx?ArticleID=6984">
-                        <img src="images/art2.webp" alt="" width="400px">
-                        <h4 class="text-left">High-Throughput Approaches for Synthesis, Characterization, and Optimization of Nanomaterials</h4>
-                        <p>As nanomaterials advance and formulations are used across medicine and materials science, industry is looking for ways to scale. High-throughput synthesis looks to be the solution.</p>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
+          <h4>About Us</h4>
+          <p>
+            NanoSphere makes nanotechnology simple, exciting, and useful for students, researchers, and science enthusiasts.
+          </p>
         </div>
 
-        <div class="col-lg-6">
-            <div class="card shadow bg-secondary border-success text-dark m-2  text-center cardborder">
-                <div class="card-header">
+        <div class="col-lg-4">
+          <h4>Stay Connected</h4>
+          <p>
+            Follow us for updates on science, discoveries, and innovations shaping tomorrow.
+          </p>
 
-                    <h3>Article3: <i>By Ibtisam Abbasi</i>&nbsp; &nbsp; &nbsp; 20 Jan 2026</h3>
-                    
-                    <div class="card-body">
-                        <a href="https://www.azonano.com/article.aspx?ArticleID=6984">
-                        <img src="images/art3.webp" alt="" width="400px">
-                        <h4 class="text-left">What are One-Dimensional Nanomaterials?</h4>
-                        <p>What are one dimensional nanomaterials, and how do they differ to those in the zeroth, second or third dimension? This article describes their differences, and examines the ways in which one dimensional nanomaterials are aiding scientific research.</p>
-                        </a>
-                    </div>
+          <a href="https://www.facebook.com">
+            <img src="images/fb.png" alt="Facebook">
+          </a>
 
-                </div>
-            </div>
-        </div>
-     </section> <br> <hr style="color: azure;">
-    <!-- Section three ends here -->
+          <a href="https://www.instagram.com">
+            <img src="images/in.png" alt="Instagram">
+          </a>
 
-    <!-- Section four starts here -->
-     <section class="row">
-            <h2 class="text-danger text-center">Websites carrying numerous articles on the field of Nanotechnology.</h2>
-            <div class="col-lg-6 text-center">
-                <a href="https://www.azonano.com/articles.aspx">
-                    <img src="images/NIH.svg" alt="" height="200px" width="300px">
-                    <h4>National Library of Medicine</h4>
-                </a>
-            </div>
-
-            <div class="col-lg-6 text-center">
-                <a href="https://mu.ac.ke/">
-                    <img src="images/Azonano.webp" alt="" height="200px" width="300px">
-                    <h4>AzoNano Institute</h4>
-                </a>
-            </div>
-     </section> <br>
-
-     <section class="row">
-        <div class="col-lg-6 text-center">
-                <a href="https://www.sciencedaily.com/news/matter_energy/nanotechnology/">
-                    <img src="images/Science Daily.png" alt="" height="200px" width="300px">
-                    <h4>ScienceDaily</h4>
-                </a>
-            </div>
-
-            <div class="col-lg-6 text-center">
-                <a href="https://scitechdaily.com/tag/nanotechnology/">
-                    <img src="images/scitechdaily-logo-flat-80.webp" alt="" height="200px" width="300px">
-                    <h4>SciTechDaily</h4>
-                </a>
-            </div>
-         </section> <br> <hr style="color: azure;">
-     </section>
-    <!-- Section four ends here -->
-
-    <!-- Section starts here -->
-        <section class="row">
-        <div class="col-lg-4  text-center m-0.5">
-            <h4>Share your thoughts.</h4> <br>
-            <div>
-                <textarea cols="30" rows="4"></textarea> <br>
-                <input type="submit" value="Submit" class="btn btn-outline-danger">
-            </div>
+          <a href="https://www.twitter.com">
+            <img src="images/x.png" alt="Twitter">
+          </a>
         </div>
 
-        <div class="col-lg-8">
-            <ul>
-                <li>Nanotechnology is not just science — it is the future being built right now. Follow along as we explore new discoveries, real-world applications, and breakthrough innovations that are shaping tomorrow.</li>
-                <li>Every discovery at the nanoscale has the power to transform medicine, energy, electronics, and the way we live. Stay connected for more updates, articles, and cutting-edge breakthroughs.</li>
-                <li>The world is changing fast, and nanotechnology is at the center of it. Let us discover what is next together — from lab breakthroughs to real-life solutions.</li>
-                <li>Whether you are a student, researcher, or tech enthusiast, you are welcome here. Follow along as we learn, share, and explore the latest in nanotech discoveries.</li>
-            </ul>
+        <div class="col-lg-4">
+          <div class="signin-card card bg-dark text-white shadow p-3">
+            <h4 class="text-success">Sign In</h4>
+
+            <input type="email" placeholder="Enter Email Address" class="mb-3">
+            <input type="password" placeholder="Enter Password" class="mb-3">
+
+            <button class="btn btn-success">Sign In</button>
+          </div>
         </div>
-     </section> <br> <hr style="color: azure;">
-    <!-- Section ends here -->
 
-    <!-- Section starts here -->
-         <section class="row bg-success">
-            <div class="col-lg-4 p-4 text-white">
-                <h4 class="text-center text-dark">About Us</h4>
+      </div>
+    </div>
+  </section>
 
-                <p>Exploring the world at the nanoscale opens doors to amazing possibilities. Our goal is to make nanotechnology easy to understand and exciting for everyone, from students to science enthusiasts.</p>
-
-                <p>We are dedicated to bringing the future of nanotechnology closer to today. From medicine to energy, electronics to materials, we showcase how tiny breakthroughs are shaping a smarter, cleaner, and more innovative world.</p>
-            </div>
-
-            <div class="col-lg-4 p-4">
-                <h4 class="text-dark text-center">Do not miss any new discoveries</h4>
-
-                <a href="https://www/facebook.com">
-                    <img src="images/fb.png" alt="">
-                </a> &nbsp; &nbsp;
-                <a href="https://www/instagram.com">
-                    <img src="images/in.png" alt="">
-                </a> &nbsp; &nbsp;
-                <a href="https://www/twitter.com">
-                    <img src="images/x.png" alt="">
-                </a> &nbsp; &nbsp;
-
-                <p class="pt-3">Stay connected with us to explore the latest nanotechnology news, breakthroughs, and innovations. Follow, subscribe, or reach out to join the conversation!</p>
-
-                <p>Be part of the future at the nanoscale. Follow us for updates on science, technology, and discoveries shaping tomorrow.</p>
-            </div>
-
-            <div class="col-lg-4 p-4">
-                <div class="card shadow bg-dark">
-                    <div class="card-header">
-                        <h5 class="text-danger">Sign In</h5>
-                        <div class="card-body">
-                            <input type="email" placeholder="Enter Email Address"> <br> <br>
-
-                            <input type="password" placeholder="Enter password"> <br> <br>
-
-                            <input type="button" value="Sign In" class="btn btn-outline-danger">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </section>
-         <footer class="text-center text-white bg-dark p-2">
-            <b>Developed by Matheka.J &copy; 2026 All Rights Reserved </b>
-         </footer>
-        <!-- Section ends here -->
+  <footer class="text-center bg-dark text-white p-3">
+    <b>Developed by Matheka.J &copy; 2026 All Rights Reserved</b>
+  </footer>
 
 </body>
 </html>

@@ -1,330 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses Page</title>
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
-    <script src="dist/js/bootstrap.js"></script>
-    <style>
-        .card{
-            height: 450px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NanoSphere Courses</title>
+
+  <link rel="stylesheet" href="dist/css/bootstrap.css" />
+  <script src="dist/js/bootstrap.bundle.js" defer></script>
+
+  <style>
+    body {
+      background: #07110d;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: rgba(5, 90, 55, 0.95);
+    }
+
+    .navbar-brand {
+      font-size: 26px;
+      font-weight: bold;
+      color: white !important;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #9fffc7 !important;
+    }
+
+    .hero {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url("images/nano2.avif");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #55ff9c;
+    }
+
+    .hero p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .section-title {
+      color: #55ff9c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .content-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(85, 255, 156, 0.2);
+      border-radius: 18px;
+      padding: 30px;
+      height: 100%;
+      box-shadow: 0 0 25px rgba(0, 255, 120, 0.08);
+    }
+
+    .course-card {
+        background: linear-gradient(145deg, #10251b, #0b1b14);
+        border: 1px solid rgba(85, 255, 156, 0.25);
+        border-radius: 22px;
+        padding: 28px;
+        height: 100%;
+        transition: 0.35s;
+        position: relative;
+        overflow: hidden;
         }
-        #crd{
-            height: 250px;
+
+    .course-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow:
+            0 0 20px rgba(85,255,156,0.25),
+            0 0 40px rgba(85,255,156,0.12);
         }
-    </style>
+
+    .course-card h4 {
+      color: #55ff9c;
+      font-weight: bold;
+    }
+
+    .badge-level {
+      display: inline-block;
+      background: rgba(85, 255, 156, 0.12);
+      color: #55ff9c;
+      border: 1px solid rgba(85, 255, 156, 0.4);
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .img-box {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    }
+
+    .feature-section {
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+        url("images/nn3.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #063d28, #0d7a47);
+      border-radius: 22px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .footer-section {
+      background: #085c38;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .timeline {
+        border-left: 3px solid #55ff9c;
+        padding-left: 25px;
+        }
+
+        .timeline-item {
+        margin-bottom: 25px;
+        position: relative;
+        }
+
+        .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -34px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        background: #55ff9c;
+        border-radius: 50%;
+        }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .img-box {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-dark">
-    <!-- Section One starts here -->
-         <section class="row">
-            <div class="col-lg-12">
-                <!-- Below tag element will hold all the contents of the navbar -->
-                 <nav class="navbar navbar-expand-lg navbar-light bg-success">
-                    <a href="Index.html">
-                        <img src="images/nano-icon.png" alt="" height="70px">
-                    </a>
-                    <a href="index.html" class="navbar-brand"><b>NanoSphere</b></a>
 
-                    <!-- Below is the toggler/hamburger button to either collapse/expand contents depending on the different screen sizes. -->
-                     <button class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
-                        <span class="navbar-toggler-icon"></span>
-                     </button>
+<body>
 
-                     <div id="navbarcontents" class="navbar-collapse collapse">
-                        <div class="navbar-nav">
-                            <a href="index.html" class="nav-link">Home</a> &nbsp;
-                            <a href="Courses.html" class="nav-link active">Courses</a> &nbsp;
-                            <a href="Articles.html" class="nav-link">Articles</a> &nbsp;
-                            <a href="AboutUs.html" class="nav-link">About Us</a> &nbsp;  
-                        </div>
-                     </div>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top px-3">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand d-flex align-items-center gap-2">
+        <img src="images/nano-icon.png" height="55" alt="NanoSphere Logo">
+        NanoSphere
+      </a>
 
-                     <div>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-dark" type="submit">Search</button>
-                        </form>
-                     </div>
-                 </nav>
-            </div>
-         </section>
-        <!-- Section One ends here -->
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarcontents">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <section class="row text-white">
-            <h2 class="text-center text-primary">NANOTECHNOLOGY COURSES</h2>
-            <p class="text-center">Welcome to the Nanotechnology Courses hub — a structured learning space designed to help you understand nanotechnology from the ground up. Whether you are completely new to the nanoscale world or you already know some basics, these courses will guide you step-by-step through the science, materials, tools, and real-world applications of nanotechnology. Each course is built to be clear, engaging, and beginner-friendly, with simple explanations, real examples, and mini projects to strengthen your understanding.</p> 
+      <div id="navbarcontents" class="collapse navbar-collapse">
+        <div class="navbar-nav mx-auto">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="Courses.html" class="nav-link active">Courses</a>
+          <a href="Articles.html" class="nav-link">Articles</a>
+          <a href="AboutUs.html" class="nav-link">About Us</a>
+        </div>
 
-            <p style="text-align: right;" class="text-danger">Explore the future — one nanometer at a time.</p>
-        </section>
+        <form class="d-flex mt-3 mt-lg-0">
+          <input class="form-control me-2" type="search" placeholder="Search courses..." />
+          <button class="btn btn-outline-light">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 
-        <section class="row p-2">
-            <div class="col-lg-6 text-white p-2">
-                <h3 class="text-success" style="text-decoration: underline darkolivegreen;">What You'll learn...</h3>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Nanotechnology Courses</h1>
+      <p>
+        Welcome to the Nanotechnology Courses hub — a structured learning space designed to help you understand nanotechnology from the ground up.
+      </p>
+      <p class="text-success fw-bold mt-3">Explore the future — one nanometer at a time.</p>
+    </div>
+  </section>
 
-                <p>By taking these courses, you will gain a strong understanding of how nanotechnology works and why it is changing the world. You will learn how materials behave differently at the nanoscale, how scientists create nanomaterials, and how nano-based innovations are being used in medicine, electronics, energy, and environmental solutions.</p>
+  <!-- STATS -->
+    <section class="container py-5">
+    <div class="row g-4 text-center">
 
-                <p>Such as:</p>
-                <ul>
-                    <li>Understanding the nanoscale (1 - 100 nm) and why it matters</li>
-                    <li>Learn key nanotechnology concepts like surface area effects and quantum behavior.</li>
-                    <li>Discover powerful nanomaterials like graphene, carbon nanotubes, and quantum dots.</li>
-                    <li>Explore real-world applications (nano-medicine, nano-electronics, energy tech)</li>
-                    <li>Learn basic research skills and how to read scientific articles</li>
-                    <li>Build mini projects and practical knowledge</li>
-                </ul>
-            </div>
+        <div class="col-md-3">
+        <div class="content-box">
+            <h1 class="text-success fw-bold">6+</h1>
+            <p>Structured Courses</p>
+        </div>
+        </div>
 
-            <dv class="col-lg-6">
-                <img src="images/nano2.avif" alt="" width="100%" height="400px">
-            </dv>
-        </section> <br> <hr style="color: azure;">
+        <div class="col-md-3">
+        <div class="content-box">
+            <h1 class="text-success fw-bold">4</h1>
+            <p>Major Nano Fields</p>
+        </div>
+        </div>
 
-        <section class="row">
-            <div class="col-lg-4 p-2">
-                <img src="images/nano4.avif" alt="" height="400px" width="100%">
-            </div>
+        <div class="col-md-3">
+        <div class="content-box">
+            <h1 class="text-success fw-bold">100%</h1>
+            <p>Beginner Friendly</p>
+        </div>
+        </div>
 
-            <div class="col-lg-8 text-white text-center">
-                <h3 class="text-primary">Roadmap To The World of Nanotech.</h3>
+        <div class="col-md-3">
+        <div class="content-box">
+            <h1 class="text-success fw-bold">Future</h1>
+            <p>Focused Learning</p>
+        </div>
+        </div>
 
-                <p>Nanotechnology can feel overwhelming because it combines physics, chemistry, biology, and engineering. That is why these courses follow a clear roadmap — so you always know what to learn next. Start with the fundamentals, then move into nanomaterials, then explore applications, and finally advance into projects and research skills.</p>
+    </div>
+    </section>
 
-                <h4 class="text-primary">Steps to take:</h4>
+  <!-- LEARNING INTRO -->
+  <section class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <div class="content-box">
+          <h2 class="section-title">What You’ll Learn</h2>
+          <p>
+            By taking these courses, you will understand how nanotechnology works and why it is changing the world.
+          </p>
 
-                <ul style="text-align: left;">
-                    <li>Nano Basics — learn the foundation and key ideas.</li>
-                    <li>Nanomaterials — explore special materials and their properties.</li>
-                    <li>Applications — learn how nanotech is used in the real world.</li>
-                    <li>Projects & Research — build skills and apply what you learned.</li>
-                </ul>
-            </div>
-        </section> <br> <hr style="color: azure;">
+          <ul>
+            <li>Understanding the nanoscale and why it matters</li>
+            <li>Surface area effects and quantum behavior</li>
+            <li>Graphene, carbon nanotubes, and quantum dots</li>
+            <li>Nano-medicine, electronics, energy, and environment</li>
+            <li>Basic research skills and mini projects</li>
+          </ul>
+        </div>
+      </div>
 
-        <section class="row">
-            <h2 style="color: brown;" class="text-center">Relevant Fields applying Nanotechnology</h2>
-            <div class="col-lg-6 text-center">
-                <!-- Below is the div that contains the card contents -->
-                <div class="card shadow border-success m-2 bg-success cardheight">
-                    <!-- Below is the div that contains the header -->
-                    <div class="card-header text-white"><h4>📘 Course 1: Nanotechnology Fundamentals</h4></div>
-                    <div class="card-body text-white">
-                        <p>This course introduces the nanoscale world and explains nanotechnology in a simple and clear way. You’ll learn what a nanometer is, why nano-sized materials behave differently, and how nanotechnology is used in everyday life.</p>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="text-dark">What you will cover.</h3>
-                        <ul class="text-white" style="text-align: left;">
-                            <li>What is nanotechnology?</li>
-                            <li>Nanoscale size comparisons.</li>
-                            <li>Surface area effect.</li>
-                            <li>Nano properties and behavior.</li>
-                            <li>Everyday nano products.</li>
-                        </ul>
-                        <h4>Level: Beginner</h4>
-                        <p>Estimated time: 2–3 hours</p>
-                    </div>
-                </div>
-            </div>
+      <div class="col-lg-6">
+        <img src="images/nano2.avif" class="img-box" alt="Nanotechnology learning">
+      </div>
+    </div>
+  </section>
 
-            <div class="col-lg-6 text-center">
-                <!-- Below is the div that contains the card contents -->
-                <div class="card shadow border-success m-2 bg-success cardheight">
-                    <!-- Below is the div that contains the header -->
-                    <div class="card-header text-white"><h4>🧪 Course 2: Nanomaterials (Graphene, CNTs & More)</h4></div>
-                    <div class="card-body text-white">
-                        <p>Nanomaterials are the backbone of nanotechnology. In this course you’ll explore the most important nanomaterials and understand their properties, strengths, and real-world uses.</p>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="text-dark">What you will cover.</h3>
-                        <ul class="text-white" style="text-align: left;">
-                            <li>Graphene and why it’s special</li>
-                            <li>Carbon nanotubes (CNTs)</li>
-                            <li>Gold and silver nanoparticles</li>
-                            <li>Quantum dots</li>
-                            <li>Nanocoatings</li>
-                        </ul>
-                        <h4>Level: Intermediate</h4>
-                        <p>Estimated time: 3 hours</p>
-                    </div>
-                </div>
-            </div>
-        </section> <br>
+  <!-- ROADMAP -->
+  <section class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-5">
+        <img src="images/nano4.avif" class="img-box" alt="Nanotechnology roadmap">
+      </div>
 
-        <section class="row">
-            <div class="col-lg-6 text-center">
-                <!-- Below is the div that contains the card contents -->
-                <div class="card shadow border-success m-2 bg-success cardheight">
-                    <!-- Below is the div that contains the header -->
-                    <div class="card-header text-white"><h4>🩺 Course 3: Nanotechnology in Medicine</h4></div>
-                    <div class="card-body text-white">
-                        <p>Learn how nanotechnology is changing healthcare. This course explains how nanoparticles can deliver medicine directly to specific targets, detect diseases earlier, and improve treatments.</p>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="text-dark">What you will cover.</h3>
-                        <ul class="text-white" style="text-align: left;">
-                            <li>Nanoparticles for drug delivery</li>
-                            <li>Cancer treatment and nano-therapy</li>
-                            <li>Nano biosensors</li>
-                            <li>Antibacterial coatings</li>
-                            <li>Future nano-medicine ideas</li>
-                        </ul>
-                        <h4>Level: Intermediate</h4>
-                        <p>Estimated time: 3–4 hours</p>
-                    </div>
-                </div>
-            </div>
+      <div class="col-lg-7">
+        <div class="content-box">
+          <h2 class="section-title">Roadmap To The World of Nanotech</h2>
+          <p>
+            Nanotechnology combines physics, chemistry, biology, and engineering. This roadmap helps you learn step-by-step.
+          </p>
 
-            <div class="col-lg-6 text-center">
-                <!-- Below is the div that contains the card contents -->
-                <div class="card shadow border-success m-2 bg-success cardheight">
-                    <!-- Below is the div that contains the header -->
-                    <div class="card-header text-white"><h4>💻 Course 4: Nano Electronics & Smart Devices</h4></div>
-                    <div class="card-body text-white">
-                        <p>Electronics are becoming smaller and more powerful thanks to nanotechnology. In this course, you’ll learn how nano-sized transistors work and how nanomaterials are shaping future devices.</p>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="text-dark">What you will cover.</h3>
-                        <ul class="text-white" style="text-align: left;">
-                            <li>Nano transistors & chips</li>
-                            <li>Why smaller chips are faster</li>
-                            <li>Quantum dots in displays</li>
-                            <li>Flexible electronics</li>
-                            <li>Future computing materials</li>
-                        </ul>
-                        <h4>Level: Intermediate</h4>
-                        <p>Estimated time: 3–4 hours</p>
-                    </div>
-                </div>
-            </div>
-        </section> <br>
+          <ol>
+            <li><b>Nano Basics</b> — learn the foundation and key ideas.</li>
+            <li><b>Nanomaterials</b> — explore special materials and their properties.</li>
+            <li><b>Applications</b> — learn how nanotech is used in the real world.</li>
+            <li><b>Projects & Research</b> — apply what you have learned.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="row">
-            <div class="col-lg-6 text-center">
-                <!-- Below is the div that contains the card contents -->
-                <div class="card shadow border-success m-2 bg-success cardheight">
-                    <!-- Below is the div that contains the header -->
-                    <div class="card-header text-white"><h4>⚡ Course 5: Nanotech in Energy & Environment</h4></div>
-                    <div class="card-body text-white">
-                        <p>Nanotechnology plays a major role in solving energy and environmental problems. This course explores nano-based solutions for better batteries, solar panels, and clean water filtration.</p>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="text-dark">What you will cover.</h3>
-                        <ul class="text-white" style="text-align: left;">
-                            <li>Nanotech batteries & supercapacitors</li>
-                            <li>Nano solar cell technology</li>
-                            <li>Water purification and nano filters</li>
-                            <li>Nano catalysts</li>
-                            <li>Environmental impacts</li>
-                        </ul>
-                        <h4>Level: Beginner</h4>
-                        <p>Estimated time: 2 hours</p>
-                    </div>
-                </div>
-            </div>
+  <!-- LEARNING PATH -->
+    <section class="container py-5">
 
-            <div class="col-lg-6 text-center">
-                <!-- Below is the div that contains the card contents -->
-                <div class="card shadow border-success m-2 bg-success cardheight">
-                    <!-- Below is the div that contains the header -->
-                    <div class="card-header text-white"><h4>🧩 Course 6: Projects, Research & Skills</h4></div>
-                    <div class="card-body text-white">
-                        <p>This advanced course helps you apply what you’ve learned. You’ll learn how to read research papers, understand nano lab tools, and create small nanotech-based projects and reports.</p>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="text-dark">What you will cover.</h3>
-                        <ul class="text-white" style="text-align: left;">
-                            <li>Research skills and scientific writing</li>
-                            <li>SEM/TEM microscopy basics</li>
-                            <li>How to understand scientific papers</li>
-                            <li>Project ideas and planning</li>
-                            <li>Building a learning portfolio</li>
-                        </ul>
-                        <h4>Level: Advanced</h4>
-                        <p>Estimated time: 3–4 hours</p>
-                    </div>
-                </div>
-            </div>
-        </section> <br> <hr style="color: azure;">
+    <div class="content-box">
 
-        <h2 class="text-center text-primary">Course Features Section</h2>
+        <h2 class="section-title text-center">
+        Your Nanotechnology Journey
+        </h2>
 
-        <p class="text-white text-center">These courses are designed for learners who want real understanding, not complicated explanations. Every lesson is structured to be clear, modern, and easy to follow, with examples that connect nanotechnology to real-world innovation.</p>
+        <div class="timeline mt-4">
 
-        <section class="row" style="background-image: url(images/nn3.jpg);">
-            <div class="col-lg-4">
-                <h3 class="text-primary text-center">Features include:</h3>
-                <ul class="text-white" style="color: azure;">
-                    <li>Beginner-friendly explanations</li>
-                    <li>Structured roadmap and clear progression</li>
-                    <li>Short lessons with key takeaways</li>
-                    <li>Real-life examples and applications</li>
-                    <li>Project suggestions for practical learning</li>
-                    <li>Certificates (coming soon)</li>
-                </ul>
-            </div>
+        <div class="timeline-item">
+            <h5 class="text-success">Step 1: Learn Nano Basics</h5>
+            <p>Understand nanoscale science and core nanotechnology concepts.</p>
+        </div>
 
-            <div class="col-lg-8">
-                <h3 class="text-center text-warning">Keep Learning. Keep Discovering.</h3>
-                <p class="text-white">Nanotechnology is advancing every day, and new breakthroughs are constantly being made in labs around the world. By learning the fundamentals today, you are preparing yourself for the technologies of tomorrow — from nano-medicine and smart materials to advanced computing and clean energy solutions. Stay consistent, stay curious, and keep exploring. The nanoscale world is full of discoveries waiting to be understood.</p>
-            </div>
-        </section> <br> <hr style="color: azure;">
+        <div class="timeline-item">
+            <h5 class="text-success">Step 2: Explore Nanomaterials</h5>
+            <p>Discover graphene, nanoparticles, nanotubes, and smart materials.</p>
+        </div>
 
-        <h1 class="text-success text-center">READY TO START...?</h1>
-        <p class="text-white text-center ">Start with Nanotechnology Fundamentals and follow the roadmap step-by-step. New courses and lessons will be added regularly, so make sure to check back often and stay connected for more discoveries.</p>
+        <div class="timeline-item">
+            <h5 class="text-success">Step 3: Study Applications</h5>
+            <p>See how nanotech transforms medicine, electronics, and energy.</p>
+        </div>
 
-        <input type="button" value="Start Learning" class="btn btn-outline-success"> &nbsp; &nbsp; &nbsp; 
-        <input type="button" value="View All Courses" class="btn btn-outline-danger"> &nbsp; &nbsp; &nbsp; 
-        <input type="button" value="Subscribe for Updates" class="btn btn-outline-primary"> &nbsp; &nbsp; &nbsp; 
-        <br> <hr style="color: azure;">
+        <div class="timeline-item">
+            <h5 class="text-success">Step 4: Build Projects</h5>
+            <p>Apply your knowledge using projects, research, and scientific skills.</p>
+        </div>
 
-        <!-- Section Starts here -->
-        <section class="row bg-success">
-            <div class="col-lg-4 p-4 text-white">
-                <h4 class="text-center text-dark">About Us</h4>
+        </div>
 
-                <p>Exploring the world at the nanoscale opens doors to amazing possibilities. Our goal is to make nanotechnology easy to understand and exciting for everyone, from students to science enthusiasts.</p>
+    </div>
 
-                <p>We are dedicated to bringing the future of nanotechnology closer to today. From medicine to energy, electronics to materials, we showcase how tiny breakthroughs are shaping a smarter, cleaner, and more innovative world.</p>
-            </div>
+    </section>
 
-            <div class="col-lg-4 p-4">
-                <h4 class="text-dark text-center">Do not miss any new discoveries</h4>
+  <!-- COURSES -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">Available Nanotechnology Courses</h2>
 
-                <a href="https://www/facebook.com">
-                    <img src="images/fb.png" alt="">
-                </a> &nbsp; &nbsp;
-                <a href="https://www/instagram.com">
-                    <img src="images/in.png" alt="">
-                </a> &nbsp; &nbsp;
-                <a href="https://www/twitter.com">
-                    <img src="images/x.png" alt="">
-                </a> &nbsp; &nbsp;
+    <div class="row g-4">
 
-                <p class="pt-3">Stay connected with us to explore the latest nanotechnology news, breakthroughs, and innovations. Follow, subscribe, or reach out to join the conversation!</p>
+      <div class="col-md-6">
+        <div class="course-card">
+          <h4>📘 Course 1: Nanotechnology Fundamentals</h4>
+          <p>This course introduces the nanoscale world and explains nanotechnology in a simple and clear way.</p>
 
-                <p>Be part of the future at the nanoscale. Follow us for updates on science, technology, and discoveries shaping tomorrow.</p>
-            </div>
+          <h5>What you will cover:</h5>
+          <ul>
+            <li>What is nanotechnology?</li>
+            <li>Nanoscale size comparisons</li>
+            <li>Surface area effect</li>
+            <li>Nano properties and behavior</li>
+            <li>Everyday nano products</li>
+          </ul>
 
-            <div class="col-lg-4 p-4">
-                <div class="card shadow bg-dark" id="crd">
-                    <div class="card-header">
-                        <h5 class="text-danger">Sign In</h5>
-                        <div class="card-body">
-                            <input type="email" placeholder="Enter Email Address"> <br> <br>
+          <span class="badge-level">Beginner • 2–3 hours</span>
+        </div>
+      </div>
 
-                            <input type="password" placeholder="Enter password"> <br> <br>
+      <div class="col-md-6">
+        <div class="course-card">
+          <h4>🧪 Course 2: Nanomaterials</h4>
+          <p>Explore important nanomaterials and understand their properties, strengths, and real-world uses.</p>
 
-                            <input type="button" value="Sign In" class="btn btn-outline-danger">
+          <h5>What you will cover:</h5>
+          <ul>
+            <li>Graphene and why it is special</li>
+            <li>Carbon nanotubes</li>
+            <li>Gold and silver nanoparticles</li>
+            <li>Quantum dots</li>
+            <li>Nanocoatings</li>
+          </ul>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </section>
-         <footer class="text-center text-white bg-dark p-2">
-            <b>Developed by Matheka.J &copy; 2026 All Rights Reserved </b>
-         </footer>
-        <!-- Section ends here -->
+          <span class="badge-level">Intermediate • 3 hours</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="course-card">
+          <h4>🩺 Course 3: Nanotechnology in Medicine</h4>
+          <p>Learn how nanoparticles can deliver medicine, detect diseases earlier, and improve treatments.</p>
+
+          <h5>What you will cover:</h5>
+          <ul>
+            <li>Nanoparticles for drug delivery</li>
+            <li>Cancer treatment and nano-therapy</li>
+            <li>Nano biosensors</li>
+            <li>Antibacterial coatings</li>
+            <li>Future nano-medicine ideas</li>
+          </ul>
+
+          <span class="badge-level">Intermediate • 3–4 hours</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="course-card">
+          <h4>💻 Course 4: Nano Electronics</h4>
+          <p>Learn how nano-sized transistors and nanomaterials are shaping future devices.</p>
+
+          <h5>What you will cover:</h5>
+          <ul>
+            <li>Nano transistors and chips</li>
+            <li>Why smaller chips are faster</li>
+            <li>Quantum dots in displays</li>
+            <li>Flexible electronics</li>
+            <li>Future computing materials</li>
+          </ul>
+
+          <span class="badge-level">Intermediate • 3–4 hours</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="course-card">
+          <h4>⚡ Course 5: Energy & Environment</h4>
+          <p>Explore nano-based solutions for batteries, solar panels, clean water, and environmental protection.</p>
+
+          <h5>What you will cover:</h5>
+          <ul>
+            <li>Nanotech batteries and supercapacitors</li>
+            <li>Nano solar cell technology</li>
+            <li>Water purification and nano filters</li>
+            <li>Nano catalysts</li>
+            <li>Environmental impacts</li>
+          </ul>
+
+          <span class="badge-level">Beginner • 2 hours</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="course-card">
+          <h4>🧩 Course 6: Projects, Research & Skills</h4>
+          <p>Apply what you’ve learned by reading research papers, understanding lab tools, and planning projects.</p>
+
+          <h5>What you will cover:</h5>
+          <ul>
+            <li>Research skills and scientific writing</li>
+            <li>SEM/TEM microscopy basics</li>
+            <li>Understanding scientific papers</li>
+            <li>Project ideas and planning</li>
+            <li>Building a learning portfolio</li>
+          </ul>
+
+          <span class="badge-level">Advanced • 3–4 hours</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="container py-5">
+    <div class="feature-section">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h2 class="section-title">Course Features</h2>
+          <ul>
+            <li>Beginner-friendly explanations</li>
+            <li>Structured roadmap and clear progression</li>
+            <li>Short lessons with key takeaways</li>
+            <li>Real-life examples and applications</li>
+            <li>Project suggestions for practical learning</li>
+            <li>Certificates coming soon</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-7">
+          <h2 class="text-warning">Keep Learning. Keep Discovering.</h2>
+          <p>
+            Nanotechnology is advancing every day. By learning the fundamentals today, you prepare yourself for technologies of tomorrow — from nano-medicine and smart materials to advanced computing and clean energy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container py-5">
+    <div class="cta">
+      <h1 class="fw-bold">Ready To Start?</h1>
+      <p>
+        Start with Nanotechnology Fundamentals and follow the roadmap step-by-step. New courses and lessons will be added regularly.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <button class="btn btn-light">Start Learning</button>
+        <button class="btn btn-outline-light">View All Courses</button>
+        <button class="btn btn-outline-warning">Subscribe for Updates</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE COURSES -->
+    <section class="container py-5">
+
+    <h2 class="text-center section-title">
+        Coming Soon
+    </h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+        <div class="course-card">
+            <h4>🧬 Nano Biotechnology</h4>
+            <p>Learn how nanotechnology is changing genetics, biology, and medicine.</p>
+        </div>
+        </div>
+
+        <div class="col-md-4">
+        <div class="course-card">
+            <h4>🤖 Nano Robotics</h4>
+            <p>Explore microscopic machines and their future medical applications.</p>
+        </div>
+        </div>
+
+        <div class="col-md-4">
+        <div class="course-card">
+            <h4>🌌 Quantum Nanotechnology</h4>
+            <p>Understand the connection between quantum physics and nanoscale systems.</p>
+        </div>
+        </div>
+
+    </div>
+
+    </section>
+
+  <!-- FOOTER -->
+  <section class="footer-section py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h4>About Us</h4>
+          <p>
+            NanoSphere makes nanotechnology easy to understand and exciting for students and science enthusiasts.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <h4>Stay Connected</h4>
+          <p>Follow us for updates on science, technology, discoveries, and innovations.</p>
+
+          <a href="https://www.facebook.com"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com"><img src="images/in.png" alt="Instagram"></a>
+          <a href="https://www.twitter.com"><img src="images/x.png" alt="Twitter"></a>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card bg-dark text-white shadow p-3">
+            <h4 class="text-success">Sign In</h4>
+            <input type="email" placeholder="Enter Email Address" class="mb-3">
+            <input type="password" placeholder="Enter Password" class="mb-3">
+            <button class="btn btn-success">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center bg-dark text-white p-3">
+    <b>Developed by Matheka.J &copy; 2026 All Rights Reserved</b>
+  </footer>
 
 </body>
 </html>
